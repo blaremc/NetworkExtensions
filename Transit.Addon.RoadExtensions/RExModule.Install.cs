@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using Transit.Addon.RoadExtensions.AI;
 using Transit.Addon.RoadExtensions.Menus.Roads;
 using Transit.Addon.RoadExtensions.Menus.Roads.Textures;
+using Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway2L;
+using Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LBicycle;
+using Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LParkingBicycle;
 using Transit.Framework;
 using Transit.Framework.Builders;
 using Transit.Framework.ExtensionPoints.AI;
@@ -60,7 +63,14 @@ namespace Transit.Addon.RoadExtensions
         {
             _container = new GameObject(REX_OBJECT_NAME);
 
-         
+            var tinyZoneBlockCreators = new []
+            {
+                Oneway2LBuilder.NAME,
+                Oneway1LBicycleBuilder.NAME,
+                Oneway1LParkingBicycleBuilder.NAME,
+
+            };
+
             _menuInstaller = _container.AddInstallerComponent<MenuInstaller>();
             _menuInstaller.Host = this;
 
