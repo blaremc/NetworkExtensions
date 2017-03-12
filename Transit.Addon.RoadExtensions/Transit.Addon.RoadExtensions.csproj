@@ -105,17 +105,14 @@
     <Compile Include="Roads\PedestrianRoads\Promenade\ZonablePedestrianPromenadeBuilder.Texturing.cs" />
     <Compile Include="Roads\PedestrianRoads\Common\ZonablePedestrianHelper.cs" />
     <Compile Include="Roads\SmallHeavyRoads\AsymRoadL1R2\AsymRoadL1R2Builder.cs" />
-<<<<<<< HEAD
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LBikeAndBus\OneWay3LBikeAndBusBuilder.cs" />
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LBikeAndBus\OneWay3LBikeAndBusBuilder.Texturing.cs" />
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LBike\OneWay3LBikeBuilder.cs" />
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LBike\OneWay3LBikeBuilder.Texturing.cs" />
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LParking\OneWay3LParkingBuilder.cs" />
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LParking\OneWay3LParkingBuilder.Texturing.cs" />
-=======
     <Compile Include="Roads\SmallRoads\OneWay1LParkingBicycle\OneWay1LParkingBicycleBuilder.cs" />
     <Compile Include="Roads\SmallRoads\OneWay1LParkingBicycle\OneWay1LParkingBicycleBuilder.Texturing.cs" />
->>>>>>> 5ebdeb6... Added
     <Compile Include="Roads\SmallRoads\BasicRoadMdn\BasicRoadMdnBuilder.cs" />
     <Compile Include="Roads\SmallRoads\BasicRoadMdn\BasicRoadMdnBuilder.Texturing.cs" />
     <Compile Include="Roads\SmallRoads\BasicRoadPntMdn\BasicRoadPntMdnBuilder.cs" />
@@ -1734,6 +1731,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Roads\SmallHeavyRoads\OneWay3LParking\thumbnails.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Roads\SmallRoads\OneWay1LParkingBicycle\infotooltip.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
