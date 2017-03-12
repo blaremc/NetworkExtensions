@@ -332,7 +332,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Common
 
             return lane;
         }
-        private static void SetupTurningLaneProps(NetInfo.Lane lane)
+        public static void SetupTurningLaneProps(NetInfo.Lane lane)
         {
             var isLeftDriving = Singleton<SimulationManager>.instance.m_metaData.m_invertTraffic == SimulationMetaData.MetaBool.True;
 
