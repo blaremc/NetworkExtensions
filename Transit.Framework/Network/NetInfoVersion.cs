@@ -16,7 +16,14 @@ namespace Transit.Framework
         All = 15,
         GroundGrass = 16,
         GroundTrees = 32,
-        AllWithDecoration = 63,
+        AllWithDecoration = 63
+    }
+
+    public enum SpecailSegments
+    {
+        EndNode = 0,
+        BeforeEndNode = 1,
+        BusStation = 2
     }
 
     public static class NetInfoVersionExtensions

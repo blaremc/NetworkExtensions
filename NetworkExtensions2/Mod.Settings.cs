@@ -2,19 +2,21 @@
 using ICities;
 using Transit.Framework.Modularity;
 using UnityEngine;
-
+#if DEBUG
+using Debug = Transit.Framework.Debug;
+#endif
 namespace NetworkExtensions
 {
     public partial class Mod
     {
         protected override string SettingsFile
         {
-            get { return "NetworkExtensions2Config.xml"; }
+            get { return "RoadsForNeExt2.xml"; }
         }
 
         protected override string SettingsNode
         {
-            get { return "NetworkExtensions2"; }
+            get { return "RoadsForNeExt2"; }
         }
 
         private UIScrollablePanel _optionsPanel;
@@ -53,13 +55,14 @@ namespace NetworkExtensions
                     addTab(strip, 2, module, tabTemplate, "Sml Hvy", "RoadsSmallHV");
                     addTab(strip, 3, module, tabTemplate, "Medium", "RoadsMedium");
                     addTab(strip, 4, module, tabTemplate, "Large", "RoadsLarge");
-                    addTab(strip, 5, module, tabTemplate, "Highway", "RoadsHighway");
-                    addTab(strip, 6, module, tabTemplate, "Ped", "RoadsPedestrians");
-                    addTab(strip, 7, module, tabTemplate, "Bus", "RoadsBusways");
+                    addTab(strip, 5, module, tabTemplate, "WideAvenue", "RoadsWideAvenue");
+                    addTab(strip, 6, module, tabTemplate, "Highway", "RoadsHighway");
+                    addTab(strip, 7, module, tabTemplate, "Ped", "RoadsPedestrians");
+                    addTab(strip, 8, module, tabTemplate, "Bus", "RoadsBusways");
                 }
                 else
                 {
-                    addTab(strip, 8, module, tabTemplate);
+                    addTab(strip, 9, module, tabTemplate);
                 }
             }
         }

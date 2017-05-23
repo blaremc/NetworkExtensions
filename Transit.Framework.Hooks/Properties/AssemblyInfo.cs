@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Transit.Framework.Hooks")]
+[assembly: AssemblyTitle("BR.Transit.Framework.Hooks")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Transit.Framework.Hooks")]
+[assembly: AssemblyProduct("BR.Transit.Framework.Hooks")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6086d01a-6ab2-47d1-93c1-8f5b9f8daf8e")]
+[assembly: Guid("b086d01a-6ab2-47d1-93c1-8f5b9f8daf8e")]
 
 // Version information for an assembly consists of the following four values:
 //

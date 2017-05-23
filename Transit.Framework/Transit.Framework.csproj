@@ -8,8 +8,8 @@
     <ProjectGuid>{8891467E-C88E-46B0-96F9-4413DF6DC205}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Transit.Framework</RootNamespace>
-    <AssemblyName>Transit.Framework</AssemblyName>
+    <RootNamespace>BR.Transit.Framework</RootNamespace>
+    <AssemblyName>BR.Transit.Framework</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

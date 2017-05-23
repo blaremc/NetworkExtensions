@@ -6,7 +6,9 @@ using Transit.Framework;
 using Transit.Framework.Builders;
 using Transit.Framework.ExtensionPoints.UI;
 using UnityEngine;
-
+#if DEBUG
+using Debug = Transit.Framework.Debug;
+#endif
 namespace Transit.Addon.RoadExtensions
 {
     public partial class RExModule
@@ -30,6 +32,8 @@ namespace Transit.Addon.RoadExtensions
 
                 RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_TINY, 5);
                 RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_SMALL_HV, 20);
+                RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_WIDE, 40);
+                RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_WIDE_AVENUE, 50);
                 RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_BUSWAYS, 65);
                 RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_PEDESTRIANS, 75);
 
@@ -46,6 +50,13 @@ namespace Transit.Addon.RoadExtensions
                     ExtendedMenuManager.RegisterNewCategory(cat, GeneratedGroupPanel.GroupFilter.Net, ItemClass.Service.Road);
                 }
 
+
+                Debug.Log("---------------------------------------");
+                Resources.FindObjectsOfTypeAll<PropInfo>().All(p => {
+                    Debug.Log(p.name);
+                    return p.name == "";
+                });
+                Debug.Log("----------------END-----------------------");
                 Done = true;
             }
         }

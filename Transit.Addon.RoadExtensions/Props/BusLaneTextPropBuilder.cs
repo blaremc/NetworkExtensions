@@ -9,7 +9,7 @@ namespace Transit.Addon.RoadExtensions.Props
 {
     public class BusLaneTextPropBuilder : IPrefabBuilder<PropInfo>, IModulePart, IIdentifiable
     {
-        public string Name { get { return "BusLaneText"; } }
+        public string Name { get { return "BBusLaneText"; } }
         public string BasedPrefabName { get { return "Road Arrow F"; } }
 
         public void BuildUp(PropInfo newProp)

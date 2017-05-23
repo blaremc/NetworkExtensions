@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
-
+#if DEBUG
+using Debug = Transit.Framework.Debug;
+#endif
 namespace Transit.Framework
 {
     public static partial class Prefabs
@@ -9,7 +11,10 @@ namespace Transit.Framework
         public static T Find<T>(string prefabName, bool crashOnNotFound = true) 
             where T : PrefabInfo
         {
-            var prefab = Resources.FindObjectsOfTypeAll<T>().FirstOrDefault(p => p.name == prefabName);
+            
+            var prefab = Resources.FindObjectsOfTypeAll<T>().FirstOrDefault(p => {
+                return p.name == prefabName;
+            });
 
             if (prefab == null)
             {

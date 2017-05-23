@@ -8,8 +8,8 @@
     <ProjectGuid>{D2DA5492-3DE6-4E7D-AFF1-BB62C950632D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NetworkExtensions2.Deploy</RootNamespace>
-    <AssemblyName>NetworkExtensions2.Deploy</AssemblyName>
+    <RootNamespace>BR.NetworkExtensions2.Deploy</RootNamespace>
+    <AssemblyName>BR.NetworkExtensions2.Deploy</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -73,13 +73,13 @@ del "$(TargetDir)*.pdb"
 rd /s /q "$(TargetDir)\Buildings"
 
 if $(ConfigurationName) == Debug (
-rd /s /q  "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\NetworkExtensions2"
-mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\NetworkExtensions2"
-xcopy /q /y /e "$(ProjectDir)bin\$(ConfigurationName)" "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\NetworkExtensions2"
+rd /s /q  "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\RoadsForNeExt2"
+mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\RoadsForNeExt2"
+xcopy /q /y /e "$(ProjectDir)bin\$(ConfigurationName)" "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\RoadsForNeExt2"
 ) else (
-rd /s /q  "D:\Games\Steam\SteamApps\workshop\content\255710\478820060"
-mkdir "D:\Games\Steam\SteamApps\workshop\content\255710\478820060"
-xcopy /q /y /e "$(ProjectDir)bin\$(ConfigurationName)" "D:\Games\Steam\SteamApps\workshop\content\255710\478820060"
+rd /s /q  "C:\Games\Steam\steamapps\workshop\content\255710\929114228"
+mkdir "C:\Games\Steam\steamapps\workshop\content\255710\929114228"
+xcopy /q /y /e "$(ProjectDir)bin\$(ConfigurationName)" "C:\Games\Steam\steamapps\workshop\content\255710\929114228"
 )</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>

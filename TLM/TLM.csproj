@@ -7,8 +7,8 @@
     <ProjectGuid>{7422AE58-8B0A-401C-9404-F4A438EFFE10}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TrafficManager</RootNamespace>
-    <AssemblyName>TrafficManager</AssemblyName>
+    <RootNamespace>BR.TrafficManager</RootNamespace>
+    <AssemblyName>BR.TrafficManager</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

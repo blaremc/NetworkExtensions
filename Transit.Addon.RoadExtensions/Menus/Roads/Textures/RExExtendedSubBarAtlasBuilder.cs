@@ -15,6 +15,9 @@ namespace Transit.Addon.RoadExtensions.Menus.Roads.Textures
                 yield return RExExtendedMenus.ROADS_TINY;
                 yield return RExExtendedMenus.ROADS_PEDESTRIANS;
                 yield return RExExtendedMenus.ROADS_SMALL_HV;
+                yield return RExExtendedMenus.ROADS_WIDE;
+                yield return RExExtendedMenus.ROADS_WIDE_AVENUE;
+                yield return RExExtendedMenus.ROADS_SMALL_HV;
                 yield return RExExtendedMenus.ROADS_BUSWAYS;
             }
         }
@@ -23,16 +26,18 @@ namespace Transit.Addon.RoadExtensions.Menus.Roads.Textures
         {
             var thumbnailAtlas = ScriptableObject.CreateInstance<UITextureAtlas>();
             thumbnailAtlas.padding = 0;
-            thumbnailAtlas.name = "RExExtendedSubBar";
+            thumbnailAtlas.name = "BRRExExtendedSubBar";
 
             var shader = Shader.Find("UI/Default UI Shader");
             if (shader != null) thumbnailAtlas.material = new Material(shader);
 
-            const string PATH = @"Menus\Roads\Textures\RExExtendedSubBar.png";
+            const string PATH = @"Menus\Roads\Textures\BRRExExtendedSubBar.png";
 
             const string BASE = "SubBarButtonBase";
             const string ROADS_TINY_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_TINY;
             const string ROADS_SMALL_HV_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_SMALL_HV;
+            const string ROADS_WIDE_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_WIDE;
+            const string ROADS_WIDE_AVENUE_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_WIDE_AVENUE;
             const string ROADS_BUSWAYS_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_BUSWAYS;
             const string ROADS_PED_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_PEDESTRIANS;
 
@@ -48,7 +53,7 @@ namespace Transit.Addon.RoadExtensions.Menus.Roads.Textures
             var y = 1;
 
             const int TEXTURE_W = 292;
-            const int TEXTURE_H = 119;
+            const int TEXTURE_H = 165;
 
 
 
@@ -78,7 +83,7 @@ namespace Transit.Addon.RoadExtensions.Menus.Roads.Textures
 
 
             // Button Icons -----------------------------------------------------------------------
-            var buttonIcons = new[] { ROADS_TINY_SUBBAR, ROADS_SMALL_HV_SUBBAR, ROADS_BUSWAYS_SUBBAR, ROADS_PED_SUBBAR };
+            var buttonIcons = new[] { ROADS_TINY_SUBBAR, ROADS_SMALL_HV_SUBBAR, ROADS_WIDE_SUBBAR, ROADS_WIDE_AVENUE_SUBBAR, ROADS_BUSWAYS_SUBBAR, ROADS_PED_SUBBAR };
             const int ICON_W = 32;
             const int ICON_H = 22;
 
