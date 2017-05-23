@@ -9,12 +9,12 @@ namespace NetworkExtensions
     {
         protected override string SettingsFile
         {
-            get { return "NetworkExtensions2Config.xml"; }
+            get { return "RoadsForNeExt2.xml"; }
         }
 
         protected override string SettingsNode
         {
-            get { return "NetworkExtensions2"; }
+            get { return "RoadsForNeExt2"; }
         }
 
         private UIScrollablePanel _optionsPanel;

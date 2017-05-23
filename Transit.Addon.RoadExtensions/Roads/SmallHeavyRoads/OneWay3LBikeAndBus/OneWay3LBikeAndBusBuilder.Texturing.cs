@@ -20,8 +20,8 @@ namespace Transit.Addon.RoadExtensions.Roads.SmallHeavyRoads.OneWay3LBikeAndBusA
                         }
                             info.m_segments[i].SetTextures(
                             new TextureSet(
-                                string.Format(@"Roads\SmallHeavyRoads\OneWay3LBikeAndBus\Textures\Ground_Segment_{0}__MainTex.png", i),
-                                @"Roads\SmallHeavyRoads\OneWay3LBikeAndBus\Textures\Ground_Segment__AlphaMap.png"),
+                                string.Format(@"Roads\SmallHeavyRoads\OneWay3LBikeAndBus\Textures\Ground_Segment{0}__MainTex.png", inverted),
+                                string.Format(@"Roads\SmallHeavyRoads\OneWay3LBikeAndBus\Textures\Ground_Segment{0}__AlphaMap.png", inverted)),
                             new LODTextureSet(
                                 string.Format(@"Roads\SmallHeavyRoads\OneWay3LBikeAndBus\Textures\Ground_SegmentLOD{0}__MainTex.png", inverted),
                                 string.Format(@"Roads\SmallHeavyRoads\OneWay3LBikeAndBus\Textures\Ground_SegmentLOD{0}__AlphaMap.png", inverted),

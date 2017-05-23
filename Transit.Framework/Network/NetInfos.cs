@@ -145,7 +145,7 @@ namespace Transit.Framework.Network
                         return groundName + " Decoration Grass";
                     case NetInfoVersion.GroundTrees:
                         return groundName + " Decoration Trees";
-
+                  
                     default:
                         return groundName + " " + version;
                 }

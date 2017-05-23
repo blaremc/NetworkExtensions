@@ -5,7 +5,6 @@ using Transit.Framework;
 using Transit.Framework.Builders;
 using Transit.Framework.Network;
 using UnityEngine;
-
 namespace Transit.Addon.RoadExtensions.Roads.SmallRoads.BasicRoadMdn
 {
     public partial class BasicRoadMdnBuilder : Activable, IMultiNetInfoBuilderPart
@@ -55,6 +54,15 @@ namespace Transit.Addon.RoadExtensions.Roads.SmallRoads.BasicRoadMdn
         }
         public void BuildUp(NetInfo info, NetInfoVersion version)
         {
+
+            var list = Resources.FindObjectsOfTypeAll<PrefabInfo>().ToList();
+            for (var i=0; i< list.Count; i++)
+            {
+              //  Transit.Framework.Debug.Log(list[i].name);
+             //   UnityEngine.Debug.Log("-----"+list[i].name);
+           //     DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "-----" + list[i].name);
+            }
+
             ///////////////////////////
             // Template              //
             ///////////////////////////

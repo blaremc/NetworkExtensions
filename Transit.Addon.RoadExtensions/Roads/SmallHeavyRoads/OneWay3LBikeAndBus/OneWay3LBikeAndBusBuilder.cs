@@ -93,17 +93,16 @@ namespace Transit.Addon.RoadExtensions.Roads.SmallHeavyRoads.OneWay3LBikeAndBusA
                 {
                     carLanes[i].m_vehicleType = VehicleInfo.VehicleType.Car;
                     carLanes[i].m_laneType = NetInfo.LaneType.TransportVehicle;
-
+                    carLanes[i].SetSharedLaneProps();
+                    var tempProps = carLanes[i].m_laneProps.m_props.ToList();
+                    tempProps.RemoveProps("arrow");
+                    carLanes[i].m_laneProps.m_props = tempProps.ToArray();
                 }
                 if (i == 4)
                 {
                     carLanes[i].m_position = carLanes[3].m_position;
                     carLanes[i].m_vehicleType = VehicleInfo.VehicleType.Bicycle;
-                   carLanes[i].m_speedLimit = .6f;
-                }
-                if (i > 2)
-                {
-                    
+                    carLanes[i].m_speedLimit = .6f;
                     var tempProps = carLanes[i].m_laneProps.m_props.ToList();
                     tempProps.RemoveProps("arrow");
                     carLanes[i].m_laneProps.m_props = tempProps.ToArray();

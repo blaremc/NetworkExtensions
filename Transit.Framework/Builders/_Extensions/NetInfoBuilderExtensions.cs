@@ -57,7 +57,7 @@ namespace Transit.Framework.Builders
             var groundInfo = builder.BuildVersion(NetInfoVersion.Ground, lateOperations);
             var groundGrassInfo = builder.BuildVersion(NetInfoVersion.GroundGrass, lateOperations);
             var groundTreesInfo = builder.BuildVersion(NetInfoVersion.GroundTrees, lateOperations);
-
+          
             var groundInfos = new[] { groundInfo, groundGrassInfo, groundTreesInfo };
             groundInfos = groundInfos.Where(gi => gi != null).ToArray();
 
@@ -71,6 +71,9 @@ namespace Transit.Framework.Builders
             var bridgeInfo = builder.BuildVersion(NetInfoVersion.Bridge, lateOperations);
             var tunnelInfo = builder.BuildVersion(NetInfoVersion.Tunnel, lateOperations);
             var slopeInfo = builder.BuildVersion(NetInfoVersion.Slope, lateOperations);
+
+     
+
 
             // Setup MenuItems
             if (builder is IMenuItemBuilder)
@@ -122,18 +125,21 @@ namespace Transit.Framework.Builders
             if (bridgeInfo != null) yield return bridgeInfo;
             if (tunnelInfo != null) yield return tunnelInfo;
             if (slopeInfo != null) yield return slopeInfo;
+
         }
 
         public static NetInfo BuildVersion(this INetInfoBuilder builder, NetInfoVersion version, ICollection<Action> lateOperations)
         {
             if (builder.SupportedVersions.HasFlag(version))
             {
-                var basedPrefabName = builder.GetBasedPrefabName(version);
-                var builtPrefabName = builder.GetBuiltPrefabName(version);
 
-                var info = Prefabs
-                    .Find<NetInfo>(basedPrefabName)
-                    .Clone(builtPrefabName);
+                    var basedPrefabName = builder.GetBasedPrefabName(version);
+                    var builtPrefabName = builder.GetBuiltPrefabName(version);
+
+                    var info = Prefabs
+                        .Find<NetInfo>(basedPrefabName)
+                        .Clone(builtPrefabName);
+             
 
                 builder.BuildUp(info, version);
 

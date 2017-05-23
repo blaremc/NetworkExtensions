@@ -94,9 +94,7 @@ namespace Transit.Addon.RoadExtensions.Roads.SmallHeavyRoads.OneWay3LBike
                     carLanes[i].m_speedLimit = .6f;
                     carLanes[i].m_position = carLanes[i].m_position + .25f;
                     carLanes[i].m_width = 2;
-                    var tempProps = carLanes[i].m_laneProps.m_props.ToList();
-                    tempProps.RemoveProps("arrow");
-                    carLanes[i].m_laneProps.m_props = tempProps.ToArray();
+                    carLanes[i].SetBikeLaneProps();
                 }
 
             }

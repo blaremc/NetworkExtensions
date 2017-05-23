@@ -40,6 +40,8 @@ namespace Transit.Addon.RoadExtensions
 
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_TINY, "Tiny Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_SMALL_HV, "Small Heavy Roads");
+            locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_WIDE, "Wide Roads");
+            locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_WIDE_AVENUE, "Wide Avenue Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_BUSWAYS, "Buslane Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_PEDESTRIANS, "Pedestrian Roads");
 
@@ -73,9 +75,8 @@ namespace Transit.Addon.RoadExtensions
                 ZonablePedestrianTinyGravelRoadBuilder.NAME,
                 ZonablePedestrianTinyPavedRoadBuilder.NAME,
                 ZonablePedestrianTinyStoneRoadBuilder.NAME,
-                ZonablePedestrianTinyBoardwalkBuilder.NAME
+                ZonablePedestrianTinyBoardwalkBuilder.NAME,
             };
-
             foreach (var name in tinyZoneBlockCreators)
             {
                 RoadZoneBlocksCreationManager.RegisterCustomCreator<TinyRoadZoneBlocksCreator>(name);
