@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Transit.Addon.Tools")]
+[assembly: AssemblyTitle("BR.Transit.Addon.Tools")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Transit.Addon.Tools")]
+[assembly: AssemblyProduct("BR.Transit.Addon.Tools")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4499042e-dcd1-4f9f-a3c8-4830108169cd")]
+[assembly: Guid("b499042e-dcd1-4f9f-a3c8-4830108169cd")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -25,6 +25,8 @@ namespace Transit.Framework.Hooks.UI
                         return 30;
                     case "RoadsLarge":
                         return 40;
+                    case "RoadsWideAvenue":
+                        return 45;
                     case "RoadsHighway":
                         return 50;
                     case "RoadsIntersection":
@@ -52,6 +54,8 @@ namespace Transit.Framework.Hooks.UI
                         return 30;
                     case "RoadsLarge":
                         return 40;
+                    case "RoadsWideAvenue":
+                        return 45;
                     case "RoadsHighway":
                         return 50;
                     case "RoadsIntersection":
@@ -70,6 +74,8 @@ namespace Transit.Framework.Hooks.UI
                     return 30;
                 case "RoadsLarge":
                     return 40;
+                case "RoadsWideAvenue":
+                    return 45;
                 case "RoadsHighway":
                     return 50;
                 case "RoadsIntersection":

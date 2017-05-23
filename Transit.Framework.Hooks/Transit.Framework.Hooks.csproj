@@ -7,8 +7,8 @@
     <ProjectGuid>{A700F186-B123-45B5-ADFE-B865DF5A0F39}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Transit.Framework.Hooks</RootNamespace>
-    <AssemblyName>Transit.Framework.Hooks</AssemblyName>
+    <RootNamespace>BR.Transit.Framework.Hooks</RootNamespace>
+    <AssemblyName>BR.Transit.Framework.Hooks</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

@@ -309,7 +309,7 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
                 if (prop.m_prop.name.ToLower().Contains("traffic"))
                 {
 
-                    centerLane2PedLaneProps.AddProp(prop.ShallowClone());
+                  //  centerLane2PedLaneProps.AddProp(prop.ShallowClone());
                     prop.m_finalProp =
                     prop.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
                     var traff = prop.ShallowClone();
@@ -323,8 +323,17 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
             rightPedLaneProps.ForEach(prop =>
             {
                 prop.m_position = new Vector3(-0.8f, 0, 0);
-                
-              
+
+                if (prop == null || prop.m_prop == null)
+                {
+                    return;
+                }
+                if (prop.m_prop.name.ToLower().Contains("traffic"))
+                {
+                    var traff = prop.ShallowClone();
+                    traff.m_position = new Vector3(0.8f, 0, 0);
+                    centerLane2PedLaneProps.AddProp(traff);
+                }
             });
 
             leftPedLane.m_laneProps.m_props = leftPedLaneProps.ToArray();

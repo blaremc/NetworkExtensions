@@ -8,7 +8,7 @@ namespace Transit.Addon.RoadExtensions.Props
 {
     public class LargeAvenueMedianLightBuilder : IPrefabBuilder<PropInfo>, IModulePart, IIdentifiable
     {
-        public const string NAME = "Large Avenue Median Light";
+        public const string NAME = "BLarge Avenue Median Light";
 
         public string Name { get { return NAME; } }
         public string BasedPrefabName { get { return "Avenue Light"; } }

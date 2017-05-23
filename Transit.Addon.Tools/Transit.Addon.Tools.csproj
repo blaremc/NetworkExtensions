@@ -7,8 +7,8 @@
     <ProjectGuid>{4499042E-DCD1-4F9F-A3C8-4830108169CD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Transit.Addon.Tools</RootNamespace>
-    <AssemblyName>Transit.Addon.Tools</AssemblyName>
+    <RootNamespace>BR.Transit.Addon.Tools</RootNamespace>
+    <AssemblyName>BR.Transit.Addon.Tools</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

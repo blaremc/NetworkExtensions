@@ -7,8 +7,8 @@
     <ProjectGuid>{2E44ECA3-D750-4115-B16B-FCA94C49BBA0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Transit.Framework.ExtensionPoints</RootNamespace>
-    <AssemblyName>Transit.Framework.ExtensionPoints</AssemblyName>
+    <RootNamespace>BR.Transit.Framework.ExtensionPoints</RootNamespace>
+    <AssemblyName>BR.Transit.Framework.ExtensionPoints</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

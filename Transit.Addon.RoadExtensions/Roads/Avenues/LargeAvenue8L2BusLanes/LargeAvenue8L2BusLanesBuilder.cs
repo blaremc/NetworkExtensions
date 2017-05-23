@@ -20,7 +20,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ROAD_4L; } }
         public string Name { get { return "FourDevidedLaneAvenue2Bus"; } }
-        public string DisplayName { get { return "Four-Devided-Lane Avenue With 4 Parking"; } }
+        public string DisplayName { get { return "Four-Devided-Lane Avenue With Bus Lane"; } }
         public string Description { get { return "An four-lane road with paved median. Supports heavy urban traffic."; } }
         public string ShortDescription { get { return "No parking, zoneable, heavy urban traffic"; } }
         

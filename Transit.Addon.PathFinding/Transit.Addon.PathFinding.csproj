@@ -7,8 +7,8 @@
     <ProjectGuid>{20F6A0DC-131C-49CD-9D9B-95B6E41CDDFF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Transit.Addon.PathFinding</RootNamespace>
-    <AssemblyName>Transit.Addon.PathFinding</AssemblyName>
+    <RootNamespace>BR.Transit.Addon.PathFinding</RootNamespace>
+    <AssemblyName>BR.Transit.Addon.PathFinding</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -26,12 +26,12 @@ namespace Transit.Addon.RoadExtensions.Menus.Roads.Textures
         {
             var thumbnailAtlas = ScriptableObject.CreateInstance<UITextureAtlas>();
             thumbnailAtlas.padding = 0;
-            thumbnailAtlas.name = "RExExtendedSubBar";
+            thumbnailAtlas.name = "BRRExExtendedSubBar";
 
             var shader = Shader.Find("UI/Default UI Shader");
             if (shader != null) thumbnailAtlas.material = new Material(shader);
 
-            const string PATH = @"Menus\Roads\Textures\RExExtendedSubBar.png";
+            const string PATH = @"Menus\Roads\Textures\BRRExExtendedSubBar.png";
 
             const string BASE = "SubBarButtonBase";
             const string ROADS_TINY_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_TINY;

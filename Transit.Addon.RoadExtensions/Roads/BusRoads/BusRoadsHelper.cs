@@ -8,7 +8,7 @@ namespace Transit.Addon.RoadExtensions.Roads.BusRoads
     {
         public static void SetBusLaneProps(this NetInfo.Lane lane)
         {
-            var prop = Prefabs.Find<PropInfo>("BusLaneText", false);
+            var prop = Prefabs.Find<PropInfo>("BBusLaneText", false);
 
             if (prop == null)
             {

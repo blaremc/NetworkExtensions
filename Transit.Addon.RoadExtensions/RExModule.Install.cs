@@ -7,18 +7,11 @@ using System.Collections.Generic;
 using Transit.Addon.RoadExtensions.AI;
 using Transit.Addon.RoadExtensions.Menus.Roads;
 using Transit.Addon.RoadExtensions.Menus.Roads.Textures;
-using Transit.Addon.RoadExtensions.Roads.TinyRoads.Alley2L;
-using Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1L;
-using Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LParking;
 using Transit.Framework;
 using Transit.Framework.Builders;
 using Transit.Framework.ExtensionPoints.AI;
 using UnityEngine;
 using Object = UnityEngine.Object;
-using ZonablePedestrianTinyGravelRoadBuilder = Transit.Addon.RoadExtensions.Roads.PedestrianRoads.GravelTiny.ZonablePedestrianTinyGravelRoadBuilder;
-using ZonablePedestrianTinyPavedRoadBuilder = Transit.Addon.RoadExtensions.Roads.PedestrianRoads.PavementTiny.ZonablePedestrianTinyPavedRoadBuilder;
-using ZonablePedestrianTinyStoneRoadBuilder = Transit.Addon.RoadExtensions.Roads.PedestrianRoads.StoneTiny.ZonablePedestrianTinyStoneRoadBuilder;
-using ZonablePedestrianTinyBoardwalkBuilder = Transit.Addon.RoadExtensions.Roads.PedestrianRoads.BoardwalkTiny.ZonablePedestrianBoardwalkRoadBuilder;
 namespace Transit.Addon.RoadExtensions
 {
     public partial class RExModule
@@ -67,22 +60,7 @@ namespace Transit.Addon.RoadExtensions
         {
             _container = new GameObject(REX_OBJECT_NAME);
 
-            var tinyZoneBlockCreators = new []
-            {
-                Alley2LBuilder.NAME,
-                Oneway1LBuilder.NAME,
-                Oneway1LParkingBuilder.NAME,
-                ZonablePedestrianTinyGravelRoadBuilder.NAME,
-                ZonablePedestrianTinyPavedRoadBuilder.NAME,
-                ZonablePedestrianTinyStoneRoadBuilder.NAME,
-                ZonablePedestrianTinyBoardwalkBuilder.NAME,
-            };
-            foreach (var name in tinyZoneBlockCreators)
-            {
-                RoadZoneBlocksCreationManager.RegisterCustomCreator<TinyRoadZoneBlocksCreator>(name);
-                RoadSnappingModeManager.RegisterCustomSnapping<TinyRoadSnappingMode>(name);
-            }
-
+         
             _menuInstaller = _container.AddInstallerComponent<MenuInstaller>();
             _menuInstaller.Host = this;
 
