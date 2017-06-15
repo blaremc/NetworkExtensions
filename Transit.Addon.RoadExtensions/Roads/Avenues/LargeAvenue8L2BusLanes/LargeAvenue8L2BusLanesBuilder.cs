@@ -20,9 +20,9 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ROAD_4L; } }
         public string Name { get { return "FourDevidedLaneAvenue2Bus"; } }
-        public string DisplayName { get { return "Four-Devided-Lane Avenue With Bus Lane"; } }
-        public string Description { get { return "An four-lane road with paved median. Supports heavy urban traffic."; } }
-        public string ShortDescription { get { return "No parking, zoneable, heavy urban traffic"; } }
+        public string DisplayName { get { return "Six-Lane Road with Bus Line And Parking"; } }
+        public string Description { get { return "A six-lane road with bus lane. Supports heavy urban traffic."; } }
+        public string ShortDescription { get { return "Parking, zoneable, heavy urban traffic"; } }
         
         
         public NetInfoVersion SupportedVersions
@@ -39,8 +39,8 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                     UICategory = "RoadsMedium",
                     UIOrder = 20,
                     Name = "FourDevidedLaneAvenue2Bus",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking",
-                    Description = "A basic two lane road with a median and no parkings spaces. Supports local traffic.",
+                    DisplayName = "Six-Lane Road with Bus Line And Parking",
+                    Description = "A six-lane road with bus lane. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\thumbnails.png",
                     InfoTooltipPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\infotooltip.png"
                 };
@@ -49,10 +49,10 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                     UICategory = "RoadsMedium",
                     UIOrder = 22,
                     Name = "FourDevidedLaneAvenue2Bus Decoration Trees",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking",
-                    Description = "A basic two lane road with a grass median, trees and with parkings spaces. Supports local traffic.",
+                    DisplayName = "Six-Lane Road with Bus Line And Parking ",
+                    Description = "A six-lane road with bus lane. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\thumbnails_trees.png",
-                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\infotooltip.png"
+                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\infotooltip_trees.png"
                 };
 
                 yield return new MenuItemBuilder
@@ -60,10 +60,10 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                     UICategory = "RoadsMedium",
                     UIOrder = 21,
                     Name = "FourDevidedLaneAvenue2Bus Decoration Grass",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking and Grass",
-                    Description = "A basic two lane road with a grass median and with parkings spaces. Supports local traffic.",
+                    DisplayName = "Six-Lane Road with Bus Line And Parking",
+                    Description = "A six-lane road with bus lane. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\thumbnails_grass.png",
-                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\infotooltip.png"
+                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8L2BusLanes\infotooltip_grass.png"
                 };
             }
         }
@@ -224,7 +224,6 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
             var centerLane1PedLaneProps = centerLane1.m_laneProps.m_props.ToList();
             var centerLane2PedLaneProps = centerLane2.m_laneProps.m_props.ToList();
 
-            var trafficLight = Prefabs.Find<PropInfo>("Traffic Light 01");
             var centerLane1StreetLight = centerLane1PedLaneProps?.FirstOrDefault(p => {
                  if (p == null || p.m_prop == null)
                  {
@@ -251,13 +250,6 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 lefttLigth.m_position = new Vector3(-9.8f, 0, 0);
                 leftPedLaneProps.AddProp(lefttLigth);
             }
-            /*
-            if (centerLane1TrafficLight != null)
-            {
-                centerLane1StreetLight.m_finalProp =
-                centerLane1StreetLight.m_prop = trafficLight.ShallowClone() ;
-            }
-            */
                 var centerLane2StreetLight = centerLane2PedLaneProps?.FirstOrDefault(p =>
              {
                    if (p == null || p.m_prop == null)
@@ -275,7 +267,80 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 rightLigth.m_position = new Vector3(9.8f,0, 0);
                 rightPedLaneProps.AddProp(rightLigth);
             }
-             
+
+
+
+            var ind = 0;
+            var indped = 0;
+            centerLane1PedLaneProps?.ForEach(p => {
+                if (p == null || p.m_prop == null)
+                {
+                    return;
+                }
+
+                if (p.m_prop.name.ToLower().Contains("pedestrian"))
+                {
+                    indped++;
+                    if (indped == 1)
+                    {
+                        p.m_position = new Vector3(-0.6f, 0, 0);
+                        p.m_angle =270;
+                    }
+                }
+
+                if (p.m_prop.name.ToLower().Contains("mirror"))
+                {
+                    ind++;
+                 
+                    if (ind == 1)
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
+                    }else
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light 02");
+                        p.m_position = new Vector3(.9f, 0, 0);
+                    }
+                }
+            });
+
+            ind = 0;
+            indped = 0;
+            centerLane2PedLaneProps?.ForEach(p => {
+                if (p == null || p.m_prop == null)
+                {
+                    return;
+                }
+
+                if (p.m_prop.name.ToLower().Contains("pedestrian"))
+                {
+                    indped++;
+                    if (indped == 3)
+                    {
+                        p.m_position = new Vector3(0.6f, 0, 0);
+                        p.m_angle = 90;
+                    }
+                }
+
+                if (p.m_prop.name.ToLower().Contains("mirror"))
+                {
+                    ind++;
+                   
+                    if (ind == 2)
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
+                    }
+                    else
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light 02");
+                        p.m_position = new Vector3(-.9f, 0, 0);
+                    }
+                }
+            });
+
             if (centerLane1PedLaneProps != null)
             {
                 //     centerLane1PedLaneProps.RemoveProps("light");

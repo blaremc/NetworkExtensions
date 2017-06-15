@@ -21,7 +21,7 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway2L
         public string Name { get { return NAME; } }
         public string DisplayName { get { return NAME; } }
         public string CodeName { get { return "Oneway_2L"; } }
-        public string Description { get { return "A two-lane, tight Oneway suitable for neighborhood traffic."; } }
+        public string Description { get { return "A two-lane road suitable for neighborhood traffic."; } }
         public string ShortDescription { get { return "No parking, zoneable, neighborhood traffic"; } }
         public string UICategory { get { return RExExtendedMenus.ROADS_TINY; } }
 

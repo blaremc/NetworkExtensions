@@ -19,9 +19,9 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ROAD_4L; } }
         public string Name { get { return "WideAvenue6LBusCenterBike"; } }
-        public string DisplayName { get { return "Eight-Lane Road"; } }
-        public string Description { get { return "An eight-lane road with paved median. Supports heavy urban traffic."; } }
-        public string ShortDescription { get { return "No parking, zoneable, heavy urban traffic"; } }
+        public string DisplayName { get { return "Six-Lane Road with Bus Line Parking And Bike Lanes"; } }
+        public string Description { get { return "A six-lane road with bus and bike lanes. Supports heavy urban traffic."; } }
+        public string ShortDescription { get { return "Parking, zoneable, heavy urban traffic"; } }
         public NetInfoVersion SupportedVersions
         {
             get { return NetInfoVersion.Ground | NetInfoVersion.GroundGrass | NetInfoVersion.GroundTrees; }
@@ -36,8 +36,8 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
                     UICategory = RExExtendedMenus.ROADS_WIDE,
                     UIOrder = 20,
                     Name = "WideAvenue6LBusCenterBike",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking",
-                    Description = "A basic two lane road with a median and no parkings spaces. Supports local traffic.",
+                    DisplayName = "Six-Lane Road with Bus Line Parking And Bike Lanes",
+                    Description = "A six-lane road with bus and bike lanes. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\thumbnails.png",
                     InfoTooltipPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\infotooltip.png"
                 };
@@ -46,20 +46,20 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
                     UICategory = RExExtendedMenus.ROADS_WIDE,
                     UIOrder = 21,
                     Name = "WideAvenue6LBusCenterBike Decoration Grass",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking and Grass",
-                    Description = "A basic two lane road with a grass median and with parkings spaces. Supports local traffic.",
+                    DisplayName = "Six-Lane Road with Bus Line Parking And Bike Lanes",
+                    Description = "A six-lane road with bus and bike lanes. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\thumbnails_grass.png",
-                    InfoTooltipPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\infotooltip.png"
+                    InfoTooltipPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\infotooltip_grass.png"
                 };
                 yield return new MenuItemBuilder
                 {
                     UICategory = RExExtendedMenus.ROADS_WIDE,
                     UIOrder = 22,
                     Name = "WideAvenue6LBusCenterBike Decoration Trees",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking",
-                    Description = "A basic two lane road with a grass median, trees and with parkings spaces. Supports local traffic.",
+                    DisplayName = "Six-Lane Road with Bus Line Parking And Bike Lanes",
+                    Description = "A six-lane road with bus and bike lanes. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\thumbnails_trees.png",
-                    InfoTooltipPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\infotooltip.png"
+                    InfoTooltipPath = @"Roads\WideAvenues\Avenue6LBusCenterBike\infotooltip_trees.png"
                 };
             }
 

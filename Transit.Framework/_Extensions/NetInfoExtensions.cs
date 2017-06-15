@@ -97,7 +97,7 @@ namespace Transit.Framework
                 {
                     for (int i = 0; i < forwardLanes.Count(); i++)
                     {
-                        if (Math.Abs(forwardLanes[i].m_position) != Math.Abs(forwardLanes[i].m_position))
+                        if (Math.Abs(forwardLanes[i].m_position) != Math.Abs(backwardLanes[i].m_position))
                         {
                             return true;
                         }

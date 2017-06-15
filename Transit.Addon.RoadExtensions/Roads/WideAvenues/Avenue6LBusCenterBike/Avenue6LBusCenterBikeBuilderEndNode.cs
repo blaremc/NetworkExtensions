@@ -74,7 +74,6 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
             // 3DModeling            //
             ///////////////////////////
             info.Setup40m3mSW1mB2x4mMdnSpecialMesh(version, SpecailSegments.EndNode);
-
             ///////////////////////////
             // Texturing             //
             ///////////////////////////
@@ -106,7 +105,6 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
 
             // Setting up lanes
             info.SetRoadLanes(version, config);
-
 
             var medianLane = new NetInfo.Lane();
             RoadHelper.SetupMedianLane(medianLane, config, version);

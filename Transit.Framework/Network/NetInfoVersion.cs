@@ -22,8 +22,8 @@ namespace Transit.Framework
     public enum SpecailSegments
     {
         EndNode = 0,
-        BeforeEndNode = 1,
-        BusStation = 2
+        BusStation = 2,
+        None = 4
     }
 
     public static class NetInfoVersionExtensions

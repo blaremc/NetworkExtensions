@@ -18,9 +18,9 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ROAD_4L; } }
         public string Name { get { return "FourDevidedLaneAvenue4Parking"; } }
-        public string DisplayName { get { return "Four-Devided-Lane Avenue With 4 Parking"; } }
-        public string Description { get { return "An four-lane road with paved median. Supports heavy urban traffic."; } }
-        public string ShortDescription { get { return "No parking, zoneable, heavy urban traffic"; } }
+        public string DisplayName { get { return "Four-Devided-Lane Avenue With Parking"; } }
+        public string Description { get { return "A four-lane road with paved median. Supports heavy urban traffic."; } }
+        public string ShortDescription { get { return "Parking, zoneable, heavy urban traffic"; } }
         
         
         public NetInfoVersion SupportedVersions
@@ -37,8 +37,8 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                     UICategory = "RoadsMedium",
                     UIOrder = 17,
                     Name = "FourDevidedLaneAvenue4Parking",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking",
-                    Description = "A basic two lane road with a median and no parkings spaces. Supports local traffic.",
+                    DisplayName = "Four-Devided-Lane Avenue With Parking",
+                    Description = "A four-lane road with paved median. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\Avenues\LargeAvenue8LSideParking\thumbnails.png",
                     InfoTooltipPath = @"Roads\Avenues\LargeAvenue8LSideParking\infotooltip.png"
                 };
@@ -47,10 +47,10 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                     UICategory = "RoadsMedium",
                     UIOrder = 18,
                     Name = "FourDevidedLaneAvenue4Parking Decoration Grass",
-                    DisplayName = "Four-Devided-Lane Avenue With 4 Parking and Grass",
-                    Description = "A basic two lane road with a grass median and with parkings spaces. Supports local traffic.",
+                    DisplayName = "Four-Devided-Lane Avenue With Parking and Grass",
+                    Description = "A four-lane road with paved median. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\Avenues\LargeAvenue8LSideParking\thumbnails_grass.png",
-                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8LSideParking\infotooltip.png"
+                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8LSideParking\infotooltip_grass.png"
                 };
                 yield return new MenuItemBuilder
                 {
@@ -58,9 +58,9 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                     UIOrder = 19,
                     Name = "FourDevidedLaneAvenue4Parking Decoration Trees",
                     DisplayName = "Four-Devided-Lane Avenue With 4 Parking",
-                    Description = "A basic two lane road with a grass median, trees and with parkings spaces. Supports local traffic.",
+                    Description = "A four-lane road with paved median. Supports heavy urban traffic.",
                     ThumbnailsPath = @"Roads\Avenues\LargeAvenue8LSideParking\thumbnails_trees.png",
-                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8LSideParking\infotooltip.png"
+                    InfoTooltipPath = @"Roads\Avenues\LargeAvenue8LSideParking\infotooltip_trees.png"
                 };
             }
         }
@@ -89,16 +89,8 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
             info.m_pavementWidth = (version == NetInfoVersion.Slope || version == NetInfoVersion.Tunnel ? 4 : 3);
             info.m_halfWidth = (version == NetInfoVersion.Tunnel ? 17 : 16);
 
-            if (version == NetInfoVersion.Tunnel)
-            {
-                info.m_setVehicleFlags = Vehicle.Flags.Transition | Vehicle.Flags.Underground;
-                info.m_setCitizenFlags = CitizenInstance.Flags.Transition | CitizenInstance.Flags.Underground;
-                info.m_class = roadTunnelInfo.m_class.Clone(NetInfoClasses.NEXT_XLARGE_ROAD_TUNNEL);
-            }
-            else
-            {
-                info.m_class = info.m_class.Clone("NEXTFourDevidedLaneParkingAvenue4Parking" + version.ToString());
-            }
+
+            info.m_class = roadInfo.m_class.Clone("FourDevidedLaneAvenue4Parking");
             info.m_canCrossLanes = false;
             // Setting up lanes
             info.SetRoadLanes(version, new LanesConfiguration
@@ -198,8 +190,8 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
             var centerLane2 = info.GetMedianLane().CloneWithoutStops();
             centerLane1.m_width = 2f;
             centerLane2.m_width = 2f;
-            centerLane1.m_position = -6f;
-            centerLane2.m_position = 6f;
+            centerLane1.m_position = -6.5f;
+            centerLane2.m_position = 6.5f;
 
 
 
@@ -209,7 +201,6 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
             var centerLane1PedLaneProps = centerLane1.m_laneProps.m_props.ToList();
             var centerLane2PedLaneProps = centerLane2.m_laneProps.m_props.ToList();
 
-            var trafficLight = Prefabs.Find<PropInfo>("Traffic Light 01");
             var centerLane1StreetLight = centerLane1PedLaneProps?.FirstOrDefault(p => {
                 if (p == null || p.m_prop == null)
                 {
@@ -218,31 +209,78 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                 return p.m_prop.name.ToLower().Contains("avenue light");
             });
 
-            /*
-            var centerLane1TrafficLight = centerLane1PedLaneProps?.FirstOrDefault(p => {
+            var ind = 0;
+            var indped = 0;
+            centerLane1PedLaneProps?.ForEach(p => {
                 if (p == null || p.m_prop == null)
                 {
-                    return false;
+                    return;
                 }
-                return p.m_prop.name.ToLower().Contains("traffic light");
+
+                if (p.m_prop.name.ToLower().Contains("pedestrian"))
+                {
+                    indped++;
+                    if (indped == 1)
+                    {
+                        p.m_position = new Vector3(-0.6f, 0, 0);
+                        p.m_angle = 270;
+                    }
+                }
+
+                if (p.m_prop.name.ToLower().Contains("mirror"))
+                {
+                    ind++;
+
+                    if (ind == 1)
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
+                    }
+                    else
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light 02");
+                        p.m_position = new Vector3(.9f, 0, 0);
+                    }
+                }
             });
-            */
-            if (centerLane1StreetLight != null)
-            {
-                centerLane1StreetLight.m_finalProp =
-                 centerLane1StreetLight.m_prop = Prefabs.Find<PropInfo>(MediumAvenueSideLightBuilder.NAME);
-                centerLane1StreetLight.m_angle = 180;
-                var lefttLigth = centerLane1StreetLight.ShallowClone();
-                lefttLigth.m_position = new Vector3(0, 0, 0);
-               leftPedLaneProps.AddProp(lefttLigth);
-            }
-/*
-            if (centerLane1TrafficLight != null)
-            {
-                centerLane1StreetLight.m_finalProp =
-                centerLane1StreetLight.m_prop = trafficLight.ShallowClone();
-            }
-            */
+
+            ind = 0;
+            indped = 0;
+            centerLane2PedLaneProps?.ForEach(p => {
+                if (p == null || p.m_prop == null)
+                {
+                    return;
+                }
+
+                if (p.m_prop.name.ToLower().Contains("pedestrian"))
+                {
+                    indped++;
+                    if (indped == 3)
+                    {
+                        p.m_position = new Vector3(0.6f, 0, 0);
+                        p.m_angle = 90;
+                    }
+                }
+
+                if (p.m_prop.name.ToLower().Contains("mirror"))
+                {
+                    ind++;
+
+                    if (ind == 2)
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
+                    }
+                    else
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light 02");
+                        p.m_position = new Vector3(-.9f, 0, 0);
+                    }
+                }
+            });
+
             var centerLane2StreetLight = centerLane2PedLaneProps?.FirstOrDefault(p =>
             {
                 if (p == null || p.m_prop == null)
@@ -251,6 +289,15 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                 }
                 return p.m_prop.name.ToLower().Contains("avenue light");
             });
+            if (centerLane1StreetLight != null)
+            {
+                centerLane1StreetLight.m_finalProp =
+                 centerLane1StreetLight.m_prop = Prefabs.Find<PropInfo>(MediumAvenueSideLightBuilder.NAME);
+                centerLane1StreetLight.m_angle = 180;
+                var lefttLigth = centerLane1StreetLight.ShallowClone();
+                lefttLigth.m_position = new Vector3(0, 0, 0);
+                leftPedLaneProps.AddProp(lefttLigth);
+            }
             if (centerLane2StreetLight != null)
             {
                 centerLane2StreetLight.m_finalProp =
@@ -263,16 +310,14 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
 
             if (centerLane1PedLaneProps != null)
             {
-                      centerLane1PedLaneProps.RemoveProps("avenue");
+                centerLane1PedLaneProps.RemoveProps("avenue");
                 centerLane1PedLaneProps.RemoveProps("bus");
-         //       centerLane1PedLaneProps.RemoveProps("light");
                 centerLane1PedLaneProps.RemoveProps("50 Speed Limit");
             }
             if (centerLane2PedLaneProps != null)
             {
                     centerLane2PedLaneProps.RemoveProps("avenue");
                 centerLane2PedLaneProps.RemoveProps("bus");
-          //      centerLane2PedLaneProps.RemoveProps("light");
                 centerLane2PedLaneProps.RemoveProps("50 Speed Limit");
             }
        
@@ -290,7 +335,9 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                 centerLane1PedLaneProps.Add(treeProp.ShallowClone());
                 centerLane2PedLaneProps.Add(treeProp.ShallowClone());
             }
-            
+
+      //      centerLane2PedLaneProps.RemoveProps("mirror");
+     //       centerLane1PedLaneProps.RemoveProps("mirror");
             centerLane1.m_laneProps.m_props = centerLane1PedLaneProps.ToArray();
             centerLane2.m_laneProps.m_props = centerLane2PedLaneProps.ToArray();
 
@@ -298,8 +345,11 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
             rightPedLane.m_laneProps.m_props = rightPedLaneProps.ToArray();
 
             var pedLanes = new List<NetInfo.Lane>();
-            pedLanes.Add(rightPed);
-            pedLanes.Add(leftPed);
+            if (version == NetInfoVersion.Ground)
+            {
+                pedLanes.Add(rightPed);
+                pedLanes.Add(leftPed);
+            }
             pedLanes.Add(leftPedLane);
             pedLanes.Add(rightPedLane);
             //carLanes[4].m_position += 1;

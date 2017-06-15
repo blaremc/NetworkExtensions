@@ -215,3 +215,6 @@ pip-log.txt
 /.vs/
 *.dll
 /Transit.Addon.RoadExtensions/Roads/TinyRoads/Oneway1LParking/Textures - Copy
+
+
+.idea

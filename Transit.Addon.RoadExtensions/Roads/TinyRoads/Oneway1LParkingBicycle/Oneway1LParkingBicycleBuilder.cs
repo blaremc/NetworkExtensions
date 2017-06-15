@@ -23,7 +23,7 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LParkingBicycle
         public string DisplayName { get { return NAME; } }
         public string CodeName { get { return "Oneway1LParkingBicycle"; } }
         public string Description { get { return "A one-lane, oneway road suitable for neighborhood traffic. Has parking spaces and bicycle lane"; } }
-        public string ShortDescription { get { return "Zoneable, neighborhood traffic"; } }
+        public string ShortDescription { get { return "Zoneable, parking, neighborhood traffic"; } }
         public string UICategory { get { return RExExtendedMenus.ROADS_TINY; } }
 
         public string ThumbnailsPath { get { return @"Roads\TinyRoads\Oneway1LParkingBicycle\thumbnails.png"; } }
@@ -138,9 +138,7 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LParkingBicycle
             bikelane.m_vehicleType = VehicleInfo.VehicleType.Bicycle;
             bikelane.m_position = 2f;
             bikelane.m_verticalOffset = 0.1f;
-            tempProps = bikelane.m_laneProps.m_props.ToList();
-            tempProps.RemoveProps("arrow");
-            bikelane.m_laneProps.m_props = tempProps.ToArray();
+            bikelane.SetBikeLaneProps();
             var pedLanes = info.m_lanes.Where(l => l.m_laneType == NetInfo.LaneType.Pedestrian).ToList();
             for (int i = 0; i < pedLanes.Count(); i++)
             {

@@ -114,6 +114,7 @@ namespace Transit.Framework.Builders
                 ai.m_bridgeInfo = bridgeInfo;
                 ai.m_tunnelInfo = tunnelInfo;
                 ai.m_slopeInfo = slopeInfo;
+               
             }
 
             // Returning

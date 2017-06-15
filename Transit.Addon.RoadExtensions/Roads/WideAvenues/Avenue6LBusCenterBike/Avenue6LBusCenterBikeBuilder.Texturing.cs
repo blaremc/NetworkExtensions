@@ -19,25 +19,69 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
 
                     var isGrass = version.ToString().Substring(6).Length > 0;
                     var suffix = isGrass ? "Grass" : "Concrete";
-                
-                    info.SetAllSegmentsTexture(
+
+                    info.m_segments[0].SetTextures(
                        new TextureSet
                            (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment__MainTex.png",
                            $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment{suffix}__APRMap.png"),
-                   new LODTextureSet
+                        new LODTextureSet
                            (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__MainTex.png",
                           $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment{suffix}_LOD__APRMap.png",
                            @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
-                   
 
+                    info.m_segments[1].SetTextures(
+                       new TextureSet
+                           (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment__MainTex1.png",
+                           $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment{suffix}BeforeEnd_Inverted__APRMap.png"),
+                        new LODTextureSet
+                            (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__MainTex.png",
+                            $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_SegmentConcrete_LOD__APRMap.png",
+                            @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
+
+                    info.m_segments[2].SetTextures(
+                       new TextureSet
+                           (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment__MainTex2.png",
+                           $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment{suffix}BeforeEnd_Inverted__APRMap.png"),
+                        new LODTextureSet
+                           (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__MainTex.png",
+                          $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_SegmentConcrete_LOD__APRMap.png",
+                           @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
+
+
+                    info.m_segments[3].SetTextures(
+                        new TextureSet
+                               (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_Bus__MainTex.png",
+                               $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_SegmentConcrete_Bus__APRMap.png"),
+                       new LODTextureSet
+                               (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__MainTex.png",
+                              $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_SegmentConcrete_LOD__APRMap.png",
+                               @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
+
+                    info.m_segments[4].SetTextures(
+                    new TextureSet
+                           (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_Bus__MainTex.png",
+                           $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_SegmentConcrete_Bus__APRMap.png"),
+                   new LODTextureSet
+                           (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__MainTex.png",
+                          $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_SegmentConcrete_LOD__APRMap.png",
+                           @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
+
+                    info.m_segments[5].SetTextures(
+                   new TextureSet
+                       (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_End__MainTex2.png",
+                       $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment{suffix}BeforeEnd_Inverted__APRMap.png"),
+                    new LODTextureSet
+                       (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__MainTex.png",
+                      $@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_SegmentConcrete_LOD__APRMap.png",
+                       @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
                     info.SetAllNodesTexture(
-                     new TextureSet
-                         (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node__MainTex.png",
-                         @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node__APRMap.png"),
-                     new LODTextureSet
-                        (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node_LOD__MainTex.png",
-                         @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node_LOD__APRMap.png",
-                         @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
+                         new TextureSet
+                             (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node__MainTex.png",
+                             @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node__APRMap.png"),
+                         new LODTextureSet
+                            (@"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node_LOD__MainTex.png",
+                             @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Node_LOD__APRMap.png",
+                             @"Roads\WideAvenues\Avenue6LBusCenterBike\Textures\Ground_Segment_LOD__XYSMap.png"));
 
                     break;
 

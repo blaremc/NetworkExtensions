@@ -23,8 +23,8 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LBicycle
         public string Name { get { return NAME; } }
         public string DisplayName { get { return NAME; } }
         public string CodeName { get { return "Oneway1LBicycle"; } }
-        public string Description { get { return "A one-lane, oneway road suitable for neighborhood traffi with two bicycle lanes"; } }
-        public string ShortDescription { get { return "Zoneable, neighborhood traffic"; } }
+        public string Description { get { return "A one-lane, oneway road suitable for neighborhood traffic with two bicycle lanes"; } }
+        public string ShortDescription { get { return "Zoneable, no parking, neighborhood traffic"; } }
         public string UICategory { get { return RExExtendedMenus.ROADS_TINY; } }
 
         public string ThumbnailsPath { get { return @"Roads\TinyRoads\Oneway1LBicycle\thumbnails.png"; } }
@@ -146,9 +146,7 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LBicycle
                 bikeLanes[i].m_direction = i==0? NetInfo.Direction.Forward : NetInfo.Direction.Backward;
                 bikeLanes[i].m_speedLimit = 0.8f;
                 bikeLanes[i].m_stopType = VehicleInfo.VehicleType.None;
-                var tempProps = bikeLanes[i].m_laneProps.m_props.ToList();
-                tempProps.RemoveProps("arrow");
-                bikeLanes[i].m_laneProps.m_props = tempProps.ToArray();
+                bikeLanes[i].SetBikeLaneProps();
             }
             
           

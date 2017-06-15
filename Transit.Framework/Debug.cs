@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using System.Text;
 
 namespace Transit.Framework
 {
@@ -22,7 +24,7 @@ namespace Transit.Framework
             {
             }
         }
-
+       
         public static void Log(params System.Object[] o)
         {
             Message(o);
