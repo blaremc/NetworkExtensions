@@ -16,7 +16,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
 {
     public partial class LargeAvenue8L2BusLanesBuilder : Activable, IMultiNetInfoBuilderPart
     {
-        public int Order { get { return 20; } }
+        public int Order { get { return 28; } }
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ROAD_4L; } }
         public string Name { get { return "FourDevidedLaneAvenue2Bus"; } }
@@ -37,7 +37,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 yield return new MenuItemBuilder
                 {
                     UICategory = "RoadsMedium",
-                    UIOrder = 20,
+                    UIOrder = 28,
                     Name = "FourDevidedLaneAvenue2Bus",
                     DisplayName = "Six-Lane Road with Bus Line And Parking",
                     Description = "A six-lane road with bus lane. Supports heavy urban traffic.",
@@ -47,7 +47,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 yield return new MenuItemBuilder
                 {
                     UICategory = "RoadsMedium",
-                    UIOrder = 22,
+                    UIOrder = 30,
                     Name = "FourDevidedLaneAvenue2Bus Decoration Trees",
                     DisplayName = "Six-Lane Road with Bus Line And Parking ",
                     Description = "A six-lane road with bus lane. Supports heavy urban traffic.",
@@ -58,7 +58,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 yield return new MenuItemBuilder
                 {
                     UICategory = "RoadsMedium",
-                    UIOrder = 21,
+                    UIOrder = 29,
                     Name = "FourDevidedLaneAvenue2Bus Decoration Grass",
                     DisplayName = "Six-Lane Road with Bus Line And Parking",
                     Description = "A six-lane road with bus lane. Supports heavy urban traffic.",

@@ -35,7 +35,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                 yield return new MenuItemBuilder
                 {
                     UICategory = "RoadsMedium",
-                    UIOrder = 17,
+                    UIOrder = 25,
                     Name = "FourDevidedLaneAvenue4Parking",
                     DisplayName = "Four-Devided-Lane Avenue With Parking",
                     Description = "A four-lane road with paved median. Supports heavy urban traffic.",
@@ -45,7 +45,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                 yield return new MenuItemBuilder
                 {
                     UICategory = "RoadsMedium",
-                    UIOrder = 18,
+                    UIOrder = 26,
                     Name = "FourDevidedLaneAvenue4Parking Decoration Grass",
                     DisplayName = "Four-Devided-Lane Avenue With Parking and Grass",
                     Description = "A four-lane road with paved median. Supports heavy urban traffic.",
@@ -55,7 +55,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8LSideParking
                 yield return new MenuItemBuilder
                 {
                     UICategory = "RoadsMedium",
-                    UIOrder = 19,
+                    UIOrder = 27,
                     Name = "FourDevidedLaneAvenue4Parking Decoration Trees",
                     DisplayName = "Four-Devided-Lane Avenue With 4 Parking",
                     Description = "A four-lane road with paved median. Supports heavy urban traffic.",

@@ -99,8 +99,6 @@
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LBike\OneWay3LBikeBuilder.Texturing.cs" />
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LParking\OneWay3LParkingBuilder.cs" />
     <Compile Include="Roads\SmallHeavyRoads\OneWay3LParking\OneWay3LParkingBuilder.Texturing.cs" />
-    <Compile Include="Roads\SmallHeavyRoads\SmallAvenue4L\SmallAvenue4LBuilder.cs" />
-    <Compile Include="Roads\SmallHeavyRoads\SmallAvenue4L\SmallAvenue4LBuilder.Texturing.cs" />
     <Compile Include="Roads\TinyRoads\Oneway1LBicycle\Oneway1LBicycleBuilder.cs" />
     <Compile Include="Roads\TinyRoads\Oneway1LParkingBicycle\Oneway1LParkingBicycleBuilder.cs" />
     <Compile Include="Roads\TinyRoads\Oneway2L\Oneway2LBuilder.cs" />

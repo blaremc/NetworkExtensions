@@ -11,8 +11,8 @@ namespace Transit.Addon.RoadExtensions.Roads.SmallHeavyRoads.OneWay3LParking
 {
     public partial class OneWay3LParkingBuilder : Activable, INetInfoBuilderPart
     {
-        public int Order { get { return 9; } }
-        public int UIOrder { get { return 11; } }
+        public int Order { get { return 20; } }
+        public int UIOrder { get { return 20; } }
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ONEWAY_2L; } }
         public string Name { get { return "OneWay3LParking"; } }

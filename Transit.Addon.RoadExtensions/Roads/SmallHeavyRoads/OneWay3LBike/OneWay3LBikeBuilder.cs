@@ -11,8 +11,8 @@ namespace Transit.Addon.RoadExtensions.Roads.SmallHeavyRoads.OneWay3LBike
 {
     public partial class OneWay3LBikeBuilder : Activable, INetInfoBuilderPart
     {
-        public int Order { get { return 9; } }
-        public int UIOrder { get { return 11; } }
+        public int Order { get { return 22; } }
+        public int UIOrder { get { return 22; } }
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ONEWAY_2L; } }
         public string Name { get { return "OneWay3LBike"; } }

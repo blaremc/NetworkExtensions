@@ -16,8 +16,8 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LBicycle
         public const string NAME = "One-Lane Oneway With Two Bicycle Lanes";
 
         public SteamHelper.DLC RequiredDLC { get { return SteamHelper.DLC.AfterDarkDLC; } }
-        public int Order { get { return 2; } }
-        public int UIOrder { get { return 11; } }
+        public int Order { get { return 7; } }
+        public int UIOrder { get { return 16; } }
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ONEWAY_2L; } }
         public string Name { get { return NAME; } }

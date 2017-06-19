@@ -68,7 +68,7 @@
   <PropertyGroup>
     <PostBuildEvent>forfiles /P "$(ProjectDir)bin\$(ConfigurationName)" /S /M *.CRP /C "cmd /c move @file "$(ProjectDir)bin\$(ConfigurationName)""
 
-del "$(TargetDir)NetworkExtensions2.Deploy.dll"
+del "$(TargetDir)BR.NetworkExtensions2.Deploy.dll"
 del "$(TargetDir)*.pdb"
 rd /s /q "$(TargetDir)\Buildings"
 

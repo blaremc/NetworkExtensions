@@ -31,16 +31,15 @@ namespace Transit.Addon.RoadExtensions
         public override void OnInstallingLocalization()
         {
             base.OnInstallingLocalization();
-
+        
             var locale = SingletonLite<LocaleManager>.instance.GetLocale();
-
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_TINY, "Tiny Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_SMALL_HV, "Small Heavy Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_WIDE, "Wide Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_WIDE_AVENUE, "Wide Avenue Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_BUSWAYS, "Buslane Roads");
             locale.CreateMenuTitleLocalizedString(RExExtendedMenus.ROADS_PEDESTRIANS, "Pedestrian Roads");
-
+                 
             var menuItemBuilders = new List<IMenuItemBuilder>();
             menuItemBuilders.AddRange(Parts.OfType<IMenuItemBuilder>());
             menuItemBuilders.AddRange(Parts.OfType<IMenuItemBuildersProvider>().SelectMany(mib => mib.MenuItemBuilders));

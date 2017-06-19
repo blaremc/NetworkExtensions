@@ -9,9 +9,8 @@ namespace Transit.Framework
     public class AtlasManager : Singleton<AtlasManager>
     {
         private readonly IDictionary<string, UITextureAtlas> _atlases = new Dictionary<string, UITextureAtlas>(StringComparer.InvariantCultureIgnoreCase);
-
         public void Include<T>()
-            where T: IAtlasBuilder, new()
+                  where T : IAtlasBuilder, new()
         {
             var builder = new T();
             var atlas = builder.Build();

@@ -15,8 +15,8 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway1LParkingBicycle
     {
         public const string NAME = "One-Lane Oneway With Parking and Bicycle lane";
 
-        public int Order { get { return 2; } }
-        public int UIOrder { get { return 12; } }
+        public int Order { get { return 6; } }
+        public int UIOrder { get { return 15; } }
 
         public string BasedPrefabName { get { return NetInfos.Vanilla.ONEWAY_2L; } }
         public string Name { get { return NAME; } }

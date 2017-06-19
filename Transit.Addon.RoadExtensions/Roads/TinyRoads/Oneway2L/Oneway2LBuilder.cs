@@ -12,7 +12,7 @@ namespace Transit.Addon.RoadExtensions.Roads.TinyRoads.Oneway2L
 {
     public class Oneway2LBuilder : Activable, INetInfoBuilderPart
     {
-        public const string NAME = "Two-Lane Oneway New";
+        public const string NAME = "Two-Lane Oneway";
 
         public int Order { get { return 0; } }
         public int UIOrder { get { return 6; } }
