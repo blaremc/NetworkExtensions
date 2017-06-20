@@ -66,7 +66,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>forfiles /P "$(ProjectDir)bin\$(ConfigurationName)" /S /M *.CRP /C "cmd /c move @file "$(ProjectDir)bin\$(ConfigurationName)""
+    <PostBuildEvent>#forfiles /P "$(ProjectDir)bin\$(ConfigurationName)" /S /M *.CRP /C "cmd /c move @file "$(ProjectDir)bin\$(ConfigurationName)""
 
 del "$(TargetDir)BR.NetworkExtensions2.Deploy.dll"
 del "$(TargetDir)*.pdb"
@@ -77,9 +77,9 @@ rd /s /q  "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\RoadsFo
 mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\RoadsForNeExt2"
 xcopy /q /y /e "$(ProjectDir)bin\$(ConfigurationName)" "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\RoadsForNeExt2"
 ) else (
-rd /s /q  "C:\Games\Steam\steamapps\workshop\content\255710\929114228"
-mkdir "C:\Games\Steam\steamapps\workshop\content\255710\929114228"
-xcopy /q /y /e "$(ProjectDir)bin\$(ConfigurationName)" "C:\Games\Steam\steamapps\workshop\content\255710\929114228"
+rd /s /q  "C:\Program Files (x86)\Steam\steamapps\workshop\content\255710\929114228"
+mkdir "C:\Program Files (x86)\Steam\steamapps\workshop\content\255710\929114228"
+xcopy /q /y /e "$(ProjectDir)bin\$(ConfigurationName)" "C:\Program Files (x86)\Steam\steamapps\workshop\content\255710\929114228"
 )</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>

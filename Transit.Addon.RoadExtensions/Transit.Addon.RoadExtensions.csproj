@@ -1620,24 +1620,6 @@
     <Content Include="SomeRoads\thumbnail_atlas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Buildings\BridgePillar.CableStay32m.crp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Buildings\Wood8mEPillar.crp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Props\RetractBollard.crp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Props\RoadPlanter1.crp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Props\StoneBollard.crp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Props\WoodBollard.crp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Roads\Common\Meshes\16m\3mSW3mBikeLanes\Elevated.obj">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -2316,6 +2298,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Buildings\" />
     <Folder Include="Roads\Common\Meshes\8m\2mSW_Wood\" />
     <Folder Include="Roads\PedestrianRoads\" />
   </ItemGroup>
