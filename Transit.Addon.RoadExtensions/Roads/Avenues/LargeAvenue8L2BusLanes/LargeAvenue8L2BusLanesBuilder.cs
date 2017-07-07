@@ -224,6 +224,20 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
             var centerLane1PedLaneProps = centerLane1.m_laneProps.m_props.ToList();
             var centerLane2PedLaneProps = centerLane2.m_laneProps.m_props.ToList();
 
+            if (version == NetInfoVersion.GroundTrees)
+            {
+                var treeProp = new NetLaneProps.Prop()
+                {
+                    m_tree = Prefabs.Find<TreeInfo>("Tree2variant"),
+                    m_repeatDistance = 30,
+                    m_probability = 100,
+                };
+                treeProp.m_position.x = 0;
+                centerLane1PedLaneProps.Add(treeProp.ShallowClone());
+                centerLane2PedLaneProps.Add(treeProp.ShallowClone());
+            }
+
+
             var centerLane1StreetLight = centerLane1PedLaneProps?.FirstOrDefault(p => {
                  if (p == null || p.m_prop == null)
                  {
@@ -281,22 +295,21 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 if (p.m_prop.name.ToLower().Contains("pedestrian"))
                 {
                     indped++;
-                    if (indped == 1)
-                    {
-                        p.m_position = new Vector3(-0.6f, 0, 0);
-                        p.m_angle =270;
-                    }
+                    p.m_position = new Vector3(-0.9f, 0, 0);
+                    p.m_angle = 270;
+                    return;
                 }
 
                 if (p.m_prop.name.ToLower().Contains("mirror"))
                 {
                     ind++;
-                 
+
                     if (ind == 1)
                     {
                         p.m_finalProp =
                         p.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
-                    }else
+                    }
+                    else
                     {
                         p.m_finalProp =
                         p.m_prop = Prefabs.Find<PropInfo>("Traffic Light 02");
@@ -316,17 +329,15 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 if (p.m_prop.name.ToLower().Contains("pedestrian"))
                 {
                     indped++;
-                    if (indped == 3)
-                    {
-                        p.m_position = new Vector3(0.6f, 0, 0);
-                        p.m_angle = 90;
-                    }
+                    p.m_position = new Vector3(0.9f, 0, 0);
+                    p.m_angle = 90;
+                    return;
                 }
 
                 if (p.m_prop.name.ToLower().Contains("mirror"))
                 {
                     ind++;
-                   
+
                     if (ind == 2)
                     {
                         p.m_finalProp =
@@ -365,19 +376,7 @@ namespace Transit.Addon.RoadExtensions.Roads.Avenues.LargeAvenue8L2BusLanes
                 centerLane2.m_laneProps.m_props = centerLane2PedLaneProps.ToArray();
             }
             //var centerLaneProps = new List<NetLaneProps.Prop>();
-            if (version == NetInfoVersion.GroundTrees)
-            {
-                var treeProp = new NetLaneProps.Prop()
-                {
-                    m_tree = Prefabs.Find<TreeInfo>("Tree2variant"),
-                    m_repeatDistance = 30,
-                    m_probability = 100,
-                };
-                treeProp.m_position.x = 0;
-                centerLane1PedLaneProps.Add(treeProp.ShallowClone());
-                centerLane2PedLaneProps.Add(treeProp.ShallowClone());
-            }
-            
+           
             centerLane1.m_laneProps.m_props = centerLane1PedLaneProps.ToArray();
             centerLane2.m_laneProps.m_props = centerLane2PedLaneProps.ToArray();
 

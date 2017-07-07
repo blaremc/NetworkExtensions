@@ -66,8 +66,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>#forfiles /P "$(ProjectDir)bin\$(ConfigurationName)" /S /M *.CRP /C "cmd /c move @file "$(ProjectDir)bin\$(ConfigurationName)""
-
+    <PostBuildEvent>
 del "$(TargetDir)BR.NetworkExtensions2.Deploy.dll"
 del "$(TargetDir)*.pdb"
 rd /s /q "$(TargetDir)\Buildings"

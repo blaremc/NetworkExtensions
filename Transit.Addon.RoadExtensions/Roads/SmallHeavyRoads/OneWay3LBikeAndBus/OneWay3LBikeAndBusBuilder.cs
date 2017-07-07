@@ -87,7 +87,7 @@ namespace Transit.Addon.RoadExtensions.Roads.SmallHeavyRoads.OneWay3LBikeAndBusA
             {
                 if (i == 2)
                 {
-                    RoadHelper.SetupTurningLaneProps(carLanes[i]);
+                    //RoadHelper.SetupTurningLaneProps(carLanes[i]);
                 }
                 if (i == 3)
                 {

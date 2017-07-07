@@ -309,20 +309,88 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
                 rightPedLaneProps.AddProp(rightLigth);
             }
 
+            var ind = 0;
+            var indped = 0;
+            centerLane1PedLaneProps?.ForEach(p => {
+                if (p == null || p.m_prop == null)
+                {
+                    return;
+                }
+
+                if (p.m_prop.name.ToLower().Contains("pedestrian"))
+                {
+                    indped++;
+                        p.m_position = new Vector3(-0.9f, 0, 0);
+                        p.m_angle = 270;
+                    return;
+                }
+
+                if (p.m_prop.name.ToLower().Contains("mirror"))
+                {
+                    ind++;
+
+                    if (ind == 1)
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
+                    }
+                    else
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light 02");
+                        p.m_position = new Vector3(.9f, 0, 0);
+                    }
+                }
+            });
+
+            ind = 0;
+            indped = 0;
+            centerLane2PedLaneProps?.ForEach(p => {
+                if (p == null || p.m_prop == null)
+                {
+                    return;
+                }
+
+                if (p.m_prop.name.ToLower().Contains("pedestrian"))
+                {
+                    indped++;
+                        p.m_position = new Vector3(0.9f, 0, 0);
+                        p.m_angle = 90;
+                 return;
+                }
+
+                if (p.m_prop.name.ToLower().Contains("mirror"))
+                {
+                    ind++;
+
+                    if (ind == 2)
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light Pedestrian");
+                    }
+                    else
+                    {
+                        p.m_finalProp =
+                        p.m_prop = Prefabs.Find<PropInfo>("Traffic Light 02");
+                        p.m_position = new Vector3(-.9f, 0, 0);
+                    }
+                }
+            });
+
             if (centerLane1PedLaneProps != null)
             {
-                centerLane1PedLaneProps.RemoveProps("light");
-              //  centerLane1PedLaneProps.RemoveProps("avenue side");
+                centerLane1PedLaneProps.RemoveProps("avenue light");
+                centerLane1PedLaneProps.RemoveProps("sign");
                 centerLane1PedLaneProps.RemoveProps("50 Speed Limit");
             }
             if (centerLane2PedLaneProps != null)
             {
-                centerLane2PedLaneProps.RemoveProps("light");
+                centerLane2PedLaneProps.RemoveProps("avenue light");
         
-              //  centerLane2PedLaneProps.RemoveProps("avenue side");
+                centerLane2PedLaneProps.RemoveProps("sign");
                 centerLane2PedLaneProps.RemoveProps("50 Speed Limit");
             }
-            
+          /*  
             if (centerLane1?.m_laneProps != null && centerLane1PedLaneProps != null)
             {
                 centerLane1.m_laneProps.m_props = centerLane1PedLaneProps.ToArray();
@@ -332,22 +400,22 @@ namespace Transit.Addon.RoadExtensions.Roads.WideAvenues.Avenue6LBusCenterBike
             {
                 centerLane2.m_laneProps.m_props = centerLane2PedLaneProps.ToArray();
             }
-       
+       */
 
             //var centerLaneProps = new List<NetLaneProps.Prop>();
-            if (version == NetInfoVersion.GroundTrees)
+            /*if (version == NetInfoVersion.GroundTrees)
             {
                 var treeProp = new NetLaneProps.Prop()
                 {
                     m_tree = Prefabs.Find<TreeInfo>("Tree2variant"),
-                    m_repeatDistance = 60,
+                    m_repeatDistance = 50,
                     m_probability = 100,
                 };
                 treeProp.m_position.x = 0;
                 centerLane1PedLaneProps.Add(treeProp.ShallowClone());
                 centerLane2PedLaneProps.Add(treeProp.ShallowClone());
             }
-
+            */
             centerLane1.m_laneProps.m_props = centerLane1PedLaneProps.ToArray();
             centerLane2.m_laneProps.m_props = centerLane2PedLaneProps.ToArray();
 

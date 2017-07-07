@@ -29,17 +29,17 @@ namespace Transit.Addon.RoadExtensions
                 {
                     return;
                 }
-                if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_TINY) == null) 
+            //    if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_TINY) == null) 
                     RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_TINY, 5);
-                if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_SMALL_HV) == null)
+             //   if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_SMALL_HV) == null)
                     RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_SMALL_HV, 20);
-                if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_WIDE) == null)
+             //   if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_WIDE) == null)
                     RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_WIDE, 40);
-                if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_WIDE_AVENUE) == null)
+             //   if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_WIDE_AVENUE) == null)
                     RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_WIDE_AVENUE, 50);
-                if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_BUSWAYS) == null)
+            //    if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_BUSWAYS) == null)
                     RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_BUSWAYS, 65);
-                if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_PEDESTRIANS) == null)
+              //  if (RoadCategoryOrderManager.GetOrder(RExExtendedMenus.ROADS_PEDESTRIANS) == null)
                     RoadCategoryOrderManager.RegisterCategory(RExExtendedMenus.ROADS_PEDESTRIANS, 75);
 
                 var categories = host.Parts

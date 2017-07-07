@@ -33,13 +33,13 @@ namespace Transit.Addon.RoadExtensions.Menus.Roads.Textures
 
             const string PATH = @"Menus\Roads\Textures\BRRExExtendedSubBar.png";
 
-            const string BASE = "BRSubBarButtonBase";
-            const string ROADS_TINY_SUBBAR = "BRSubBar" + RExExtendedMenus.ROADS_TINY;
-            const string ROADS_SMALL_HV_SUBBAR = "BRSubBar" + RExExtendedMenus.ROADS_SMALL_HV;
-            const string ROADS_WIDE_SUBBAR = "BRSubBar" + RExExtendedMenus.ROADS_WIDE;
-            const string ROADS_WIDE_AVENUE_SUBBAR = "BRSubBar" + RExExtendedMenus.ROADS_WIDE_AVENUE;
-            const string ROADS_BUSWAYS_SUBBAR = "BRSubBar" + RExExtendedMenus.ROADS_BUSWAYS;
-            const string ROADS_PED_SUBBAR = "BRSubBar" + RExExtendedMenus.ROADS_PEDESTRIANS;
+            const string BASE = "SubBarButtonBase";
+            const string ROADS_TINY_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_TINY;
+            const string ROADS_SMALL_HV_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_SMALL_HV;
+            const string ROADS_WIDE_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_WIDE;
+            const string ROADS_WIDE_AVENUE_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_WIDE_AVENUE;
+            const string ROADS_BUSWAYS_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_BUSWAYS;
+            const string ROADS_PED_SUBBAR = "SubBar" + RExExtendedMenus.ROADS_PEDESTRIANS;
 
             var versions = new[] { "", "Disabled", "Focused", "Hovered", "Pressed" };
 

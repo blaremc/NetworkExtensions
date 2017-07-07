@@ -31,7 +31,8 @@ namespace Transit.Addon.Tools.Inverting
         }
 
         public override void OnUpdate(float realTimeDelta, float simulationTimeDelta)
-        {/*
+        {
+            /*
             if (ToolsModifierControl.toolController == null)
             {
                 return;
@@ -63,7 +64,7 @@ namespace Transit.Addon.Tools.Inverting
             var mgr = NetManager.instance;
             var hoveringSegment = mgr.m_segments.m_buffer[hoveringSegmentId.Value];
             var netInfo = hoveringSegment.Info;
-            /*
+          
             
             Debug.Message("==============================netInfo=================================", hoveringSegmentId.Value);
             Debug.Message("m_Atlas", netInfo.m_Atlas);
@@ -110,15 +111,15 @@ namespace Transit.Addon.Tools.Inverting
             Debug.Message("m_lanes", netInfo.m_lanes.Length);
             Debug.Message("m_laneTypes", netInfo.m_laneTypes);
             Debug.Message("m_lowerTerrain", netInfo.m_lowerTerrain);
-            Debug.Message("m_maxBuildAngle", netInfo.m_maxBuildAngle);
-            Debug.Message("m_maxBuildAngleCos", netInfo.m_maxBuildAngleCos);
-            Debug.Message("m_maxHeight", netInfo.m_maxHeight);
-            Debug.Message("m_maxPropDistance", netInfo.m_maxPropDistance);
-            Debug.Message("m_maxSlope", netInfo.m_maxSlope);
-            Debug.Message("m_maxTurnAngle", netInfo.m_maxTurnAngle);
-            Debug.Message("m_maxTurnAngleCos", netInfo.m_maxTurnAngleCos);
-            Debug.Message("m_minCornerOffset", netInfo.m_minCornerOffset);
-            Debug.Message("m_minHeight", netInfo.m_minHeight);
+     //       Debug.Message("m_maxBuildAngle", netInfo.m_maxBuildAngle);
+    //        Debug.Message("m_maxBuildAngleCos", netInfo.m_maxBuildAngleCos);
+    //        Debug.Message("m_maxHeight", netInfo.m_maxHeight);
+     //       Debug.Message("m_maxPropDistance", netInfo.m_maxPropDistance);
+     //       Debug.Message("m_maxSlope", netInfo.m_maxSlope);
+     //       Debug.Message("m_maxTurnAngle", netInfo.m_maxTurnAngle);
+    //        Debug.Message("m_maxTurnAngleCos", netInfo.m_maxTurnAngleCos);
+        //    Debug.Message("m_minCornerOffset", netInfo.m_minCornerOffset);
+        //    Debug.Message("m_minHeight", netInfo.m_minHeight);
             Debug.Message("m_netAI", netInfo.m_netAI);
             Debug.Message("m_netLayers", netInfo.m_netLayers);
             Debug.Message("m_nodeConnectGroups", netInfo.m_nodeConnectGroups);
@@ -200,7 +201,7 @@ namespace Transit.Addon.Tools.Inverting
             Debug.Message("m_useFixedHeight", netInfo.m_useFixedHeight);
             Debug.Message("m_vehicleTypes", netInfo.m_vehicleTypes);
 
-            */
+            
 
             /*
           
